@@ -1,4 +1,18 @@
-h1{
-    color: aqua;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.navbar{
+    display: flex;
+}
+
+.logo{
+    width: 500px;
+    height: 331px;
+    text-align: center;
+}
+
+.CarritoDiv{
+
+}
+
+.carritoimg{
+    height: 50px;
+    width: 50px;
 }
