@@ -1,3 +1,14 @@
+body
+ {
+   margin: 0;
+   padding: 0;
+   background: #232323;
+   color: #cdcdcd;
+ }
+
+
+
+
 header{
     display: flex;
     padding: 0px;
@@ -21,22 +32,21 @@ header{
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 10px;
+    padding-top: 20px
 }
 
 .logodiv{
   justify-content: center;
-  
+
 }
 
 .CarritoDiv{
-    padding: 10px;
     justify-content: flex-end;
 }
 
 .carritoimg{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     padding: 10px;
 
 }
@@ -47,8 +57,8 @@ header{
 }
 
 .personitaimg{
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     padding: 10px;
 
 }
@@ -57,13 +67,6 @@ header{
     background-color: ;
 }
 
- body
- {
-   margin: 0;
-   padding: 0;
-   background: #232323;
-   color: #cdcdcd;
- }
  
  #menuToggle
  {
@@ -188,4 +191,27 @@ header{
  #menuToggle input:checked ~ ul
  {
    transform: none;
+ }
+
+ main{
+  width: 100%;
+  height: 400px;
+  background-color: rgb(48, 129, 129);
+
+ }
+
+ footer{
+  background-color: black;
+  width: 100%;
+  height: auto;
+ }
+
+ .logofooterdiv{
+  width: 100%;
+  height: auto;
+ }
+
+ .logofooter{
+  width: 90%;
+  padding: 5%;
  }
