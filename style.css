@@ -5,13 +5,65 @@ body {
   color: #cdcdcd;
 }
 
-header {
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 10px 0;
+}
+
+.menuUl {
+  color: #000;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuUl li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 29px;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.menuUl li:last-child {
+  margin-right: 0;
+}
+
+.menuUl li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.menuUl li a:hover {
+  color: tomato;
+}
+
+@media screen and (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menuUl li {
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+}
+
+.contenedor-logo-iconos{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background-color: antiquewhite;
   display: flex;
   padding: 0px;
-  background-color: antiquewhite;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
 }
 
 .navbar {
@@ -29,17 +81,17 @@ header {
   height: 100%;
   min-width: 280px;
   text-align: center;
-  padding-top: 20px
 }
 
 .logodiv {
   justify-content: center;
+  padding-right: 10px;
 }
 
 .CarritoDiv,
 .PersonitaDiv {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 10px;
 }
@@ -48,13 +100,13 @@ header {
   width: 10%;
   max-width: 100px;
   min-width: 90px;
-  padding: 1em;
+  padding: 5%;
 }
 
 .personitaimg {
   width: 90%;
   max-width: 80px;
-  padding: 1em;
+  padding: 5%;
 }
 
 @media screen and (max-width: 750px) {
@@ -71,138 +123,44 @@ header {
     background-color: ;
 }
 
- 
- #menuToggle
- {
-   display: block;
-   position: relative;
-   top: 50px;
-   left: 50px;
-   
-   z-index: 1;
-   
-   -webkit-user-select: none;
-   user-select: none;
- }
- 
- #menuToggle a
- {
-   text-decoration: none;
-   color: #232323;
-   
-   transition: color 0.3s ease;
- }
- 
- #menuToggle a:hover
- {
-   color: tomato;
- }
- 
- 
- #menuToggle input
- {
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   
-   cursor: pointer;
-   
-   opacity: 0; 
-   z-index: 2; 
-   
-   -webkit-touch-callout: none;
- }
- 
-
- #menuToggle span
- {
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-   
-   background: black;
-   border-radius: 3px;
-   
-   z-index: 1;
-   
-   transform-origin: 4px 0px;
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
- 
- #menuToggle span:first-child
- {
-   transform-origin: 0% 0%;
- }
- 
- #menuToggle span:nth-last-child(2)
- {
-   transform-origin: 0% 100%;
- }
- 
-
- #menuToggle input:checked ~ span
- {
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
- }
- 
-
- #menuToggle input:checked ~ span:nth-last-child(3)
- {
-   opacity: 0;
-   transform: rotate(0deg) scale(0.2, 0.2);
- }
-
- #menuToggle input:checked ~ span:nth-last-child(2)
- {
-   transform: rotate(-45deg) translate(0, -1px);
- }
-
- #menu
- {
-   position: absolute;
-   width: 300px;
-   margin: -100px 0 0 -50px;
-   padding-left: 50px;
-   padding-right: 50px;
-   padding-bottom: 23px;
-   padding-top: 125px;
-   
-   background: #ededed;
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   transform-origin: 0% 0%;
-   transform: translate(-100%, 0);
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
- }
- 
- #menu li
- {
-   padding: 10px 0;
-   font-size: 22px;
- }
- 
- #menuToggle input:checked ~ ul
- {
-   transform: none;
- }
-
  main{
   width: 100%;
-  height: 400px;
   background-color: rgb(48, 129, 129);
 
  }
+
+ .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+
+.item {
+  width: calc(33.33% - 20px); 
+  margin: 10px;
+  text-align: center;
+  background-color: white; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.price {
+  font-weight: bold;
+  color: tomato;
+}
+
+.description {
+  color: #333;
+}
 
  footer {
   background-color: #000;
