@@ -18,10 +18,10 @@ for(j=0;j<=3;j++){
     document.getElementById ("descripcion"+prefijo+(j+1)).innerHTML=Lositems[j].description;
     document.getElementById ("precio"+prefijo+(j+1)).innerHTML=Lositems[j].price;
     document.getElementById ("foto"+prefijo+(j+1)).src=Lositems[j].image;
+    document.getElementById ("link"+prefijo+(j+1)).href="detalle.html?"+prefijo+"&id="+Lositems[j].id;
 }
 
 }
-
 
 
 
