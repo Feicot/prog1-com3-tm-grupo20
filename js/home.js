@@ -8,7 +8,7 @@ window.addEventListener("load", function() {
 
 function cargarh1 (Lositems){
 for(j=0;j<=3;j++){
-    document.getElementById ("titulo"+(j+1)).innerHTML(Lositems[j].title);
+    document.getElementById ("titulo"+(j+1)).innerHTML=Lositems[j].title;
 }
 
 }
