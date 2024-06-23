@@ -13,9 +13,9 @@ fetch("https://fakestoreapi.com/products/"+id)
 
 function cargar (Elitem){
     
-        document.getElementById ("titulo").innerHTML=Elitem.title;
-        document.getElementById ("descripcion").innerHTML=Elitem.description;
-        document.getElementById ("precio").innerHTML=Elitem.price;
+        document.getElementById ("titulo").inner.HTML=Elitem.title;
+        document.getElementById ("descripcion").inner.HTML=Elitem.description;
+        document.getElementById ("precio").inner.HTML=Elitem.price;
         document.getElementById ("foto").src=Elitem.image;
         
     }
