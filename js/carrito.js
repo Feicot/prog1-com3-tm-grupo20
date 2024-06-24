@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDiv.classList.add('item');
 
             const img = document.createElement('img');
-            img.src = '../img/camperaG2.png'; // Asegúrate de usar la ruta correcta para tus imágenes
-            img.alt = product.name;
+            img.src = '../img/camperaG2.png'; 
 
             const nameP = document.createElement('p');
             nameP.textContent = product.name;
@@ -38,8 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderCart();
-});
-    function redirectToCart() {
-        window.location.href = 'carrito.html';
-    }
 });
