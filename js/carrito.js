@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cart = [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
-    
+
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', event => {
             const productId = event.target.dataset.productId;
             const productName = event.target.dataset.productName;
             const productPrice = event.target.dataset.productPrice;
-            
+
             const product = {
                 id: productId,
                 name: productName,
                 price: productPrice,
                 quantity: 1
             };
-            
+
             addToCart(product);
             renderCart();
         });
+    });
+
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'carrito.html';
     });
 
     function addToCart(product) {
@@ -37,4 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsContainer.appendChild(li);
         });
     }
+
+    renderCart();
 });
