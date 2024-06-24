@@ -20,4 +20,35 @@ function cargar (Elitem){
         
     }
     
+    document.addEventListener('DOMContentLoaded', () => {
+        const buyNowButton = document.getElementById('buy-now');
     
+        buyNowButton.addEventListener('click', () => {
+            const productId = buyNowButton.dataset.id;
+            const productName = buyNowButton.dataset.name;
+            const productPrice = buyNowButton.dataset.price;
+    
+            const product = {
+                id: productId,
+                name: productName,
+                price: parseFloat(productPrice),
+                quantity: 1
+            };
+    
+            addToCart(product);
+            window.location.href = 'carrito.html';
+        });
+    
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === product.id);
+    
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push(product);
+            }
+    
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    });

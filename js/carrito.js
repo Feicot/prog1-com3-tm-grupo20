@@ -1,51 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.buy-now').forEach(button => {
-        button.addEventListener('click', event => {
-            const productId = event.target.dataset.productId;
-            const productName = event.target.dataset.productName;
-            const productPrice = event.target.dataset.productPrice;
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
 
-            const product = {
-                id: productId,
-                name: productName,
-                price: parseFloat(productPrice),
-                quantity: 1
-            };
+    function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
 
-            addToCart(product);
+        cart.forEach(product => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item');
+
+            const img = document.createElement('img');
+            img.src = '../img/camperaG2.png'; // Asegúrate de usar la ruta correcta para tus imágenes
+            img.alt = product.name;
+
+            const nameP = document.createElement('p');
+            nameP.textContent = product.name;
+
+            const priceP = document.createElement('p');
+            priceP.textContent = `$${product.price}`;
+
+            const quantityP = document.createElement('p');
+            quantityP.textContent = `Cantidad: ${product.quantity}`;
+
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(nameP);
+            itemDiv.appendChild(priceP);
+            itemDiv.appendChild(quantityP);
+
+            cartItemsContainer.appendChild(itemDiv);
+
+            totalPrice += product.price * product.quantity;
         });
-    });
 
-    function addToCart(product) {
-        fetch('http://localhost:3000/cart')
-            .then(response => response.json())
-            .then(cart => {
-                const existingProduct = cart.find(item => item.id === product.id);
-                if (existingProduct) {
-                    existingProduct.quantity += 1;
-                    fetch(`http://localhost:3000/cart/${existingProduct.id}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(existingProduct)
-                    }).then(() => {
-                        redirectToCart();
-                    });
-                } else {
-                    fetch('http://localhost:3000/cart', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(product)
-                    }).then(() => {
-                        redirectToCart();
-                    });
-                }
-            });
+        totalPriceElement.textContent = `Total: $${totalPrice}`;
     }
 
+    renderCart();
+});
     function redirectToCart() {
         window.location.href = 'carrito.html';
     }
