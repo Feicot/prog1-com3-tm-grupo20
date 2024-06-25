@@ -34,7 +34,7 @@ window.onload = function() {
                 formIsValid = false;
             }
             if (formIsValid) {
-                window.location.href = "inicio-sesion.html";
+                window.location.href = "index.html";
             }
         });
     } else {
