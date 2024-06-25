@@ -34,6 +34,7 @@ window.onload = function() {
                 formIsValid = false;
             }
             if (formIsValid) {
+                console.log("registrando usuario")
                 window.location.href = "inicio-sesion.html";
             }
         });
