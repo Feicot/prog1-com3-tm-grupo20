@@ -7,7 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column;
 }
 
 .container {
@@ -58,4 +57,12 @@ a:hover {
   text-decoration: underline;
 }
 
-.error { color: red; font-size: 14px; margin-top: 5px; } .success { color: green; font-size: 14px; margin-top: 5px; }
+.recuadros {
+  width: calc(80% - 20px);
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
