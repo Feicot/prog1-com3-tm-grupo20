@@ -21,7 +21,7 @@ window.onload = function() {
                 return;
             }
             message.innerText = 'Recibirás un email con las instrucciones para recuperar tu contraseña.';
-            window.location.href = "inicio-sesion.html";
+            message.innerHTML +=  '<a href="inicio-sesion.html">Ir al login</a>';
         });
     } else {x
         console.error("Formulario no encontrado.");
