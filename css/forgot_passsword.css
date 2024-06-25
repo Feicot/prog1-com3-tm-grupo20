@@ -58,3 +58,4 @@ body {
     text-decoration: underline;
   }
   
+  .error { color: red; font-size: 14px; margin-top: 5px; } .success { color: green; font-size: 14px; margin-top: 5px; }
