@@ -9,10 +9,10 @@ window.onload = function() {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirm_password").value;
-            document.getElementById("usernameError").innerText = " ";
-            document.getElementById("emailError").innerText = " ";
-            document.getElementById("passwordError").innerText = " ";
-            document.getElementById("confirmPasswordError").innerText = " ";
+            document.getElementById("usernameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+            document.getElementById("confirmPasswordError").innerText = "";
             let formIsValid = true;
             if (username === '') {
                 document.getElementById("usernameError").innerText = "Por favor complete el campo";
