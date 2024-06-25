@@ -33,7 +33,7 @@ window.onload = function() {
                 formIsValid = false;
             }
             if (formIsValid) {
-                window.location.href = 'inicio-sesion.html'; // Redirigir al formulario de inicio de sesión
+                window.location.href = 'inicio-sesion.html';
             }
         });
     } else {
