@@ -14,15 +14,15 @@ window.onload = function() {
             document.getElementById("passwordError").innerText = " ";
             document.getElementById("confirmPasswordError").innerText = " ";
             let formIsValid = true;
-            if (username.trim() === '') {
+            if (username === '') {
                 document.getElementById("usernameError").innerText = "Por favor complete el campo";
                 formIsValid = false;
             }
-            if (email.trim() === '') {
+            if (email === '') {
                 document.getElementById("emailError").innerText = "Por favor complete el campo";
                 formIsValid = false;
             }
-            if (password.trim() === '') {
+            if (password === '') {
                 document.getElementById("passwordError").innerText = "Por favor complete el campo";
                 formIsValid = false;
             } else if (password.length < 6) {
